@@ -1,6 +1,7 @@
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
-import Login from './pages/Login';
-import Registration from './pages/Registration';
+import LoginPage from './pages/Login';
+import RegistrationPage from './pages/Registration';
+import Habitos from './pages/Habitos'
 
 function App() {
   return (
@@ -8,11 +9,15 @@ function App() {
       <Switch>
 
         <Route path='/' exact>
-          <Login/>
+          <LoginPage/>
         </Route>
 
         <Route path='/cadastro'>
-          <Registration/>
+          <RegistrationPage/>
+        </Route>
+
+        <Route path='/Habitos' exact>
+          <Habitos/>
         </Route>
 
       </Switch>
