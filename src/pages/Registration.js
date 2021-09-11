@@ -24,7 +24,7 @@ export default function RegistrationPage() {
         .then (res => {
             console.log(res.data)
         })
-        .catch(alert('opa, ocorreu um erro na realização do seu cadastro 🙁'))
+        .catch(error => error (alert('opa, ocorreu um erro na realização do seu cadastro 🙁')))
     }
 
     return(

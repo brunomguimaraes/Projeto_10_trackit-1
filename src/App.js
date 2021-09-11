@@ -1,7 +1,7 @@
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import LoginPage from './pages/Login';
 import RegistrationPage from './pages/Registration';
-import Habitos from './pages/Habitos'
+import Habits from './pages/Habits'
 
 function App() {
   return (
@@ -17,7 +17,7 @@ function App() {
         </Route>
 
         <Route path='/Habitos' exact>
-          <Habitos/>
+          <Habits/>
         </Route>
 
       </Switch>

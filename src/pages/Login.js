@@ -24,9 +24,8 @@ export default function LoginPage() {
             history.push('/Habitos')
 
         })
-        .catch (alert('Seus dados não foram encontrados 🤔, se cadastra aí 😉'))
+        .catch ( error => error (alert('Seus dados não foram encontrados 🤔, se cadastra aí 😉')))
     }
-
 
     return (
         <form onSubmit={Login}>
