@@ -9,13 +9,18 @@ import { useState } from 'react';
 export default function CreateHabits() {
     const Week = ['D', 'S', 'T', 'Q', 'Q', 'S', 'S']
     const [day, setDay] = useState('');
-    console.log(day)
+    const [nameHabits, setNameHabists] = useState('');
 
     function ToSaveHabits(event) {
         event.preventDefault();
         const body = {
-            //aqui ficará os valores para enviar ao servidor
+            nameHabits,
+            day
         }
+      
+        console.log(body)
+        console.log(day)
+        
     }
 
     return(
@@ -26,20 +31,18 @@ export default function CreateHabits() {
                 <Button onClick={Create}>+</Button>
             </Title>
 
-            <form>
-                <Create>
-                    <NameHabit placeholder='nome do hábito'/>
-                    <Days>
-                        { Week.map ( (day, index) => <button value={day} onClick={e => setDay (e.target.value)} key = {index} > {day}</button>)}
-                    </Days>
-                    <Option>
-                        <button>Cancelar</button>
-                        <button>Salvar</button>
-                    </Option>
-                </Create>
-
+            <form onSubmit={ToSaveHabits}>
+            <Create>
+                 <NameHabit type='text' placeholder='nome do hábito' value={nameHabits} onChange={e => setNameHabists (e.target.value)} required/>
+                 <Days>
+                    { Week.map ( (day, index) => <button value={day} onClick={(e) => setDay(e.target.value)} key={index} > {day}</button>)}
+                </Days>
+                <Option>
+                    <button>Cancelar</button>
+                    <button type='submit'>Salvar</button>
+                 </Option>
+            </Create>
             </form>
-
             <Notification>
                 <span>Você não tem nenhum hábito <br/> 
                 cadastrado ainda. Adicione um hábito <br/>
@@ -64,7 +67,6 @@ const NameHabit = styled.input `
     height: 45px;
     padding: 8px;
     border: 1px solid #D5D5D5;
-    box-sizing: border-box;
     border-radius: 5px;
 
     ::placeholder {

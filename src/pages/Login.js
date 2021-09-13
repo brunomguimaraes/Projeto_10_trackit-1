@@ -5,6 +5,7 @@ import { useState } from 'react';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
 
+
 export default function LoginPage() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -21,7 +22,7 @@ export default function LoginPage() {
         axios.post('https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/auth/login', body)
         .then (res => {
             console.log(res.data)
-            history.push('/Habitos');
+            history.push('/Habitos');//mudar para hoje
         })
         .catch ( error => error (alert('Seus dados não foram encontrados 🤔, se cadastra aí 😉')))
     }

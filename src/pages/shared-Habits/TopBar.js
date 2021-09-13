@@ -1,7 +1,10 @@
 import styled from "styled-components";
 import Logoimg from '../../assets/css/img/TrackIt.png'
+import UserContext from "../Contexts/UserContext";
+import { useContext } from "react";
 
 export default function TopBar() {
+    const user = useContext (UserContext);
     return(
         <Top>
             <Logo src={Logoimg}/>
