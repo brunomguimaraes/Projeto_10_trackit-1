@@ -18,10 +18,12 @@ const Bottom = styled.div `
     display: flex;
     justify-content: space-around;
     align-items: center;
+    background-color: #FFFFFF;
 `
 const Option = styled.span`
     color: #52B6FF;
     font-size: 18px;
+    font-family: 'Lexend Deca';
 `
 const Progress = styled.div ` 
     width: 85px;
@@ -29,6 +31,7 @@ const Progress = styled.div `
     border-radius: 50%;
     background-color: #52B6FF;
     font-size: 18px;
+    font-family: 'Lexend Deca';
     display: flex;
     justify-content: center;
     align-items: center;

@@ -6,6 +6,7 @@ const Container = styled.div`
     display:flex;
     flex-direction:column;
     align-items: center;
+    background-color: ${ ({background}) => background ? '#F2F2F2': '#FFFFFF'};
 `
 const Logo = styled.img `
     width: 180px;

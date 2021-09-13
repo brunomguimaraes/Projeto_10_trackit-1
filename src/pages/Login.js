@@ -8,7 +8,7 @@ import { useHistory } from 'react-router-dom';
 export default function LoginPage() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    let history = useHistory();
+    const history = useHistory();
 
     function Login(event) {
         event.preventDefault();
@@ -21,8 +21,7 @@ export default function LoginPage() {
         axios.post('https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/auth/login', body)
         .then (res => {
             console.log(res.data)
-            history.push('/Habitos')
-
+            history.push('/Habitos');
         })
         .catch ( error => error (alert('Seus dados não foram encontrados 🤔, se cadastra aí 😉')))
     }

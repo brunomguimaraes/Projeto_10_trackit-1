@@ -1,7 +1,8 @@
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import LoginPage from './pages/Login';
 import RegistrationPage from './pages/Registration';
-import Habits from './pages/Habits'
+import Habits from './pages/InitialHabits'
+import CreateHabits from './pages/CreateHabits';
 
 function App() {
   return (
@@ -20,6 +21,10 @@ function App() {
           <Habits/>
         </Route>
 
+        <Route path='/CriarHabitos'>
+          <CreateHabits/>
+        </Route>
+        
       </Switch>
     </BrowserRouter>
   );

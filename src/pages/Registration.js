@@ -3,12 +3,14 @@ import { Link } from "react-router-dom";
 import { Inputs, Logo, Button, Go, Container} from "./shared-Login&Registration/components";
 import { useState } from 'react';
 import axios from 'axios';
+import { useHistory } from 'react-router-dom';
 
 export default function RegistrationPage() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [name, setName] = useState('');
     const [image, setImage] = useState('');
+    const history = useHistory();
 
     function Registration(event) {
         event.preventDefault();
@@ -23,6 +25,7 @@ export default function RegistrationPage() {
         axios.post ('https://mock-api.bootcamp.respondeai.com.br/api/v2/trackit/auth/sign-up', body)
         .then (res => {
             console.log(res.data)
+            history('/LoginPage');
         })
         .catch(error => error (alert('opa, ocorreu um erro na realização do seu cadastro 🙁')))
     }
